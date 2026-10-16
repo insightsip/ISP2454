@@ -3,9 +3,9 @@
 		"${workspaceFolder}"
 	],
 	"nrf-connect.applications": [
-		"${workspaceFolder}\\sample\\drivers\\spi_flash",
-		"${workspaceFolder}\\sample\\matter\\thermostat",
-		"${workspaceFolder}\\sample\\matter\\light_bulb"
+		"${workspaceFolder}\\samples\\drivers\\spi_flash",
+		"${workspaceFolder}\\samples\\matter\\thermostat",
+		"${workspaceFolder}\\samples\\matter\\light_bulb"
 	],
 	"terminal.integrated.stickyScroll.enabled": false
 }
