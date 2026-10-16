@@ -1,0 +1,73 @@
+# ---------------------------------------------------------------
+# Build outputs (west / CMake / sysbuild / twister)
+# Do NOT ignore the top-level "zephyr/" folder: it holds module.yml.
+# (generated zephyr/ folders inside builds are already covered by build*/)
+# ---------------------------------------------------------------
+build/
+build_*/
+build-*/
+twister-out*/
+twister-*/
+_build/
+compile_commands.json
+.cache/
+CMakeUserPresets.json
+
+# Object files / binaries generated outside the build folder
+*.o
+*.obj
+*.elf
+*.map
+*.lst
+*.lss
+*.su
+
+# ---------------------------------------------------------------
+# West workspace (if the repo is cloned inside a workspace)
+# ---------------------------------------------------------------
+.west/
+modules/
+bootloader/
+nrf/
+nrfxlib/
+tools/
+zephyr-sdk*/
+
+# ---------------------------------------------------------------
+# Secrets: MCUboot signing keys, certificates, environment files
+# Never commit a private key.
+# ---------------------------------------------------------------
+*.pem
+*.key
+.env
+
+# ---------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---------------------------------------------------------------
+# VS Code (nRF Connect extension): keep only the shared settings.
+# Make sure settings.json contains no absolute paths (C:/...).
+# ---------------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.nrfconnect/
+.idea/
+
+# ---------------------------------------------------------------
+# Editors, OS, backups
+# ---------------------------------------------------------------
+*.bak
+*.old
+*.orig
+*.rej
+*.swp
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
