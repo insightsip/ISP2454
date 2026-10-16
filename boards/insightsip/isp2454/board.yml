@@ -1,0 +1,96 @@
+boards:
+  - name: isp2454_lx_tb
+    full_name: ISP2454-LX Test Board (without external flash)
+    vendor: insightsip
+    socs:
+      - name: nrf54l15
+        variants:
+          - name: ns
+            cpucluster: cpuapp
+  - name: isp2454_lx_tb_mx
+    full_name: ISP2454-LX Test Board (Macronix flash)
+    vendor: insightsip
+    socs:
+      - name: nrf54l15
+        variants:
+          - name: ns
+            cpucluster: cpuapp
+  - name: isp2454_lx_tb_rn
+    full_name: ISP2454-LX Test Board (Renesas flash)
+    vendor: insightsip
+    socs:
+      - name: nrf54l15
+        variants:
+          - name: ns
+            cpucluster: cpuapp
+  - name: isp2454_lp_tb_mx
+    full_name: ISP2454-LP Test Board (Macronix flash)
+    vendor: insightsip
+    socs:
+      - name: nrf54l15
+        variants:
+          - name: ns
+            cpucluster: cpuapp
+  - name: isp2454_lp_tb_rn
+    full_name: ISP2454-LP Test Board (Renesas flash)
+    vendor: insightsip
+    socs:
+      - name: nrf54l15
+        variants:
+          - name: ns
+            cpucluster: cpuapp
+runners:
+  run_once:
+    '--recover':
+      - runners:
+          - nrfjprog
+          - nrfutil
+        run: first
+        groups:
+          - boards:
+              - isp2454_lx_tb/nrf54l15/cpuapp
+              - isp2454_lx_tb/nrf54l15/cpuapp/ns
+              - isp2454_lx_tb_mx/nrf54l15/cpuapp
+              - isp2454_lx_tb_mx/nrf54l15/cpuapp/ns
+              - isp2454_lx_tb_rn/nrf54l15/cpuapp
+              - isp2454_lx_tb_rn/nrf54l15/cpuapp/ns
+              - isp2454_lp_tb_mx/nrf54l15/cpuapp
+              - isp2454_lp_tb_mx/nrf54l15/cpuapp/ns
+              - isp2454_lp_tb_rn/nrf54l15/cpuapp
+              - isp2454_lp_tb_rn/nrf54l15/cpuapp/ns
+    '--erase':
+      - runners:
+          - nrfjprog
+          - jlink
+          - nrfutil
+        run: first
+        groups:
+          - boards:
+              - isp2454_lx_tb/nrf54l15/cpuapp
+              - isp2454_lx_tb/nrf54l15/cpuapp/ns
+              - isp2454_lx_tb_mx/nrf54l15/cpuapp
+              - isp2454_lx_tb_mx/nrf54l15/cpuapp/ns
+              - isp2454_lx_tb_rn/nrf54l15/cpuapp
+              - isp2454_lx_tb_rn/nrf54l15/cpuapp/ns
+              - isp2454_lp_tb_mx/nrf54l15/cpuapp
+              - isp2454_lp_tb_mx/nrf54l15/cpuapp/ns
+              - isp2454_lp_tb_rn/nrf54l15/cpuapp
+              - isp2454_lp_tb_rn/nrf54l15/cpuapp/ns
+    '--reset':
+      - runners:
+          - nrfjprog
+          - jlink
+          - nrfutil
+        run: last
+        groups:
+          - boards:
+              - isp2454_lx_tb/nrf54l15/cpuapp
+              - isp2454_lx_tb/nrf54l15/cpuapp/ns
+              - isp2454_lx_tb_mx/nrf54l15/cpuapp
+              - isp2454_lx_tb_mx/nrf54l15/cpuapp/ns
+              - isp2454_lx_tb_rn/nrf54l15/cpuapp
+              - isp2454_lx_tb_rn/nrf54l15/cpuapp/ns
+              - isp2454_lp_tb_mx/nrf54l15/cpuapp
+              - isp2454_lp_tb_mx/nrf54l15/cpuapp/ns
+              - isp2454_lp_tb_rn/nrf54l15/cpuapp
+              - isp2454_lp_tb_rn/nrf54l15/cpuapp/ns

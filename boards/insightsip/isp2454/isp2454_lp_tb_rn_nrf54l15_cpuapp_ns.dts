@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) 2026 Ma Compagnie
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+
+#define USE_NON_SECURE_ADDRESS_MAP 1
+
+#include <arm/nordic/nrf54l15_cpuapp_ns.dtsi>
+#include "isp2454_common.dtsi"
+#include "isp2454_tb_common.dtsi"
+#include "isp2454_ns.dtsi"
+#include "isp2454_flash_rn.dtsi"
+
+/ {
+	model = "ISP2454-LP Test Board (with Renesas flash, non-secure)";
+	compatible = "insightsip,isp2454-lp-tb";
+};
+
+/* Default memory partition configuration (SDK) */
+#include <vendor/nordic/nrf54l15_cpuapp_ns_partition.dtsi>

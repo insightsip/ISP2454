@@ -1,0 +1,20 @@
+/*
+ * Copyright (c) 2026 Ma Compagnie
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+
+#include <nordic/nrf54l15_cpuapp.dtsi>
+#include "isp2454_common.dtsi"
+#include "isp2454_tb_common.dtsi"
+#include "isp2454_s.dtsi"
+#include "isp2454_flash_mx.dtsi"
+
+/ {
+	model = "ISP2454-LP Test Board (flash Macronix)";
+	compatible = "insightsip,isp2454-lp-tb";
+};
+
+/* Default memory partition configuration (SDK) */
+#include <vendor/nordic/nrf54l15_cpuapp_partition.dtsi>

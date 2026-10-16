@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) 2026 Ma Compagnie
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&spi00 {
+	status = "okay";
+
+	ext_flash: at25ff321a@0 {
+		compatible = "jedec,spi-nor";
+		status = "okay";
+		reg = <0>;
+		spi-max-frequency = <8000000>;
+
+		jedec-id = [1f 47 08];
+		sfdp-bfp = [
+			e5 20 e1 ff  ff ff ff 01  40 eb 08 68  08 3b 00 ff
+			ee ff ff ff  ff ff 00 ff  ff ff 00 ff  0c 20 0f 52
+			10 d8 00 ff  50 2a 2a 01  82 ff 9c d2  64 c1 08 46
+			7a 75 7a 75  f7 c4 d5 5c  00 06 51 ff  88 30 00 00
+		];
+		size = <33554432>;
+		has-dpd;
+		t-enter-dpd = <10000>;
+		t-exit-dpd = <35000>;
+	};
+};
+
+/ {
+	chosen {
+		nordic,pm-ext-flash = &ext_flash;
+	};
+};

@@ -1,0 +1,22 @@
+identifier: isp2454_lp_tb_mx/nrf54l15/cpuapp
+name: ISP2454-LP Test Board (with Macronix flash)
+vendor: insightsip
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+ram: 188
+flash: 1428
+supported:
+  - adc
+  - counter
+  - dmic
+  - gpio
+  - i2c
+  - i2s
+  - pwm
+  - retained_mem
+  - spi
+  - watchdog
+sysbuild: true

@@ -1,0 +1,22 @@
+identifier: isp2454_lx_tb_rn/nrf54l15/cpuapp
+name: ISP2454-LX Test Board (with Renesas flash)
+vendor: macompagnie
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+ram: 188
+flash: 1428
+supported:
+  - adc
+  - counter
+  - dmic
+  - gpio
+  - i2c
+  - i2s
+  - pwm
+  - retained_mem
+  - spi
+  - watchdog
+sysbuild: true
