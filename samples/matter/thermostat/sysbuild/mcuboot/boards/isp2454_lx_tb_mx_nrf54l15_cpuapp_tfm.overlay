@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) 2026 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+ */
+
+/* Same workaround as the DK: the secure target defines slot1_partition by
+ * default, it must be removed before the TF-M layout redefines it.
+ */
+/delete-node/ &slot1_partition;
+
+#include "isp2454_matter_tfm_base_partitions.dtsi"
+
+/ {
+	chosen {
+		zephyr,code-partition = &boot_partition;
+		nordic,pm-ext-flash = &ext_flash;
+	};
+};
+
+&ext_flash {
+	status = "okay";
+};
