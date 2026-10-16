@@ -1,0 +1,4 @@
+name: isp2454
+build:
+  settings:
+    board_root: .
