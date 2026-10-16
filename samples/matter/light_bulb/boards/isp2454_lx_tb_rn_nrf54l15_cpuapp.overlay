@@ -1,0 +1,31 @@
+/*
+ * Copyright (c) 2024 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+ */
+
+#include "isp2454_matter_partitions.dtsi"
+
+/ {
+	chosen {
+		nordic,pm-ext-flash = &ext_flash;
+	};
+
+	aliases {
+		/* PWM LED used as the light: pwm_led1 (LED 1, P1.10, pwm20)
+		 * is already defined by the board.
+		 */
+		pwm-led1 = &pwm_led1;
+
+		/* Use watchdog wdt31 as the application watchdog */
+		watchdog0 = &wdt31;
+	};
+};
+
+&ext_flash {
+	status = "okay";
+};
+
+&wdt31 {
+	status = "okay";
+};

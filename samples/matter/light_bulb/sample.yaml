@@ -1,0 +1,42 @@
+sample:
+  description: Matter Light Bulb sample for ISP2454 modules
+  name: ISP Matter Light Bulb
+common:
+  tags:
+    - sysbuild
+    - ci_samples_matter
+tests:
+  sample.matter.light_bulb.debug:
+    sysbuild: true
+    build_only: true
+    integration_platforms:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp
+    platform_allow:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp
+      - isp2454_lx_tb_rn/nrf54l15/cpuapp
+      - isp2454_lp_tb_mx/nrf54l15/cpuapp
+      - isp2454_lp_tb_rn/nrf54l15/cpuapp
+  sample.matter.light_bulb.release:
+    sysbuild: true
+    build_only: true
+    extra_args:
+      - FILE_SUFFIX=release
+    integration_platforms:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp
+    platform_allow:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp
+      - isp2454_lx_tb_rn/nrf54l15/cpuapp
+      - isp2454_lp_tb_mx/nrf54l15/cpuapp
+      - isp2454_lp_tb_rn/nrf54l15/cpuapp
+  sample.matter.light_bulb.tfm:
+    sysbuild: true
+    build_only: true
+    extra_args:
+      - FILE_SUFFIX=tfm
+    integration_platforms:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp/ns
+    platform_allow:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp/ns
+      - isp2454_lx_tb_rn/nrf54l15/cpuapp/ns
+      - isp2454_lp_tb_mx/nrf54l15/cpuapp/ns
+      - isp2454_lp_tb_rn/nrf54l15/cpuapp/ns
