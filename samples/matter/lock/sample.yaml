@@ -1,0 +1,54 @@
+sample:
+  description: Matter Door Lock sample for ISP2454 modules
+  name: ISP Matter Door Lock
+common:
+  tags:
+    - sysbuild
+    - ci_samples_matter
+tests:
+  sample.matter.lock.debug:
+    sysbuild: true
+    build_only: true
+    integration_platforms:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp
+    platform_allow:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp
+      - isp2454_lx_tb_rn/nrf54l15/cpuapp
+      - isp2454_lp_tb_mx/nrf54l15/cpuapp
+      - isp2454_lp_tb_rn/nrf54l15/cpuapp
+  sample.matter.lock.release:
+    sysbuild: true
+    build_only: true
+    extra_args:
+      - FILE_SUFFIX=release
+    integration_platforms:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp
+    platform_allow:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp
+      - isp2454_lx_tb_rn/nrf54l15/cpuapp
+      - isp2454_lp_tb_mx/nrf54l15/cpuapp
+      - isp2454_lp_tb_rn/nrf54l15/cpuapp
+  sample.matter.lock.tfm:
+    sysbuild: true
+    build_only: true
+    extra_args:
+      - FILE_SUFFIX=tfm
+    integration_platforms:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp/ns
+    platform_allow:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp/ns
+      - isp2454_lx_tb_rn/nrf54l15/cpuapp/ns
+      - isp2454_lp_tb_mx/nrf54l15/cpuapp/ns
+      - isp2454_lp_tb_rn/nrf54l15/cpuapp/ns
+  sample.matter.lock.schedules:
+    sysbuild: true
+    build_only: true
+    extra_args:
+      - EXTRA_CONF_FILE=schedules.conf
+    integration_platforms:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp
+    platform_allow:
+      - isp2454_lx_tb_mx/nrf54l15/cpuapp
+      - isp2454_lx_tb_rn/nrf54l15/cpuapp
+      - isp2454_lp_tb_mx/nrf54l15/cpuapp
+      - isp2454_lp_tb_rn/nrf54l15/cpuapp
