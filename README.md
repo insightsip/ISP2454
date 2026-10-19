@@ -7,6 +7,14 @@ This repository is a west manifest repository and a Zephyr module. It brings in
 nRF Connect SDK v3.4.1 and adds the ISP2454 test boards to it, so you can build
 for these boards like any other board in the SDK.
 
+## Compatibility
+
+| ISP2454 | nRF Connect SDK |
+|---------|-----------------|
+| v1.0.0  | v3.4.1          |
+
+See [CHANGELOG.md](CHANGELOG.md) for the changes in each release.
+
 ## Repository layout
 
 | Path                         | Content                                              |
@@ -32,9 +40,7 @@ All boards use the nRF54L15 application core. Each one has a secure target
 | `isp2454_lp_tb_mx/nrf54l15/cpuapp` | ISP2454-LP  | Macronix MX25R3235F     |
 | `isp2454_lp_tb_rn/nrf54l15/cpuapp` | ISP2454-LP  | Renesas AT25FF321A      |
 
-Both flash chips are 32 Mbit (4 MiB) parts on `spi00`. The board definition
-gives them the same `ext_flash` label, so overlays that use `ext_flash` work
-on both the `*_mx` and `*_rn` boards.
+Both flash chips are 32 Mbit (4 MiB) parts on `spi00`.
 
 ### Test board peripherals
 
@@ -46,8 +52,6 @@ on both the `*_mx` and `*_rn` boards.
 | Button 1      | P1.09                                       | `sw1`                                       |
 | Console/shell | P1.04 TX, P1.05 RX                          | `uart20`, 115200 baud                       |
 | SPI-NOR flash | P2.01 SCK, P2.02 MOSI, P2.04 MISO, P2.05 CS | `spi00`, `ext_flash`                        |
-
-Only LED 1 can be dimmed: `pwm20` can only drive pins on port P1.
 
 ## Samples
 
