@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) 2024 Nordic Semiconductor ASA
+ *
+ * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
+ */
+
+#include "isp2454_matter_partitions.dtsi"
+
+/ {
+	chosen {
+		/* MCUboot must be linked in boot_partition, not in slot0 */
+		zephyr,code-partition = &boot_partition;
+		nordic,pm-ext-flash = &ext_flash;
+	};
+};
+
+&ext_flash {
+	status = "okay";
+};
