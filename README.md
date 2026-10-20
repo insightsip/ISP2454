@@ -11,6 +11,7 @@ for these boards like any other board in the SDK.
 
 | ISP2454 | nRF Connect SDK |
 |---------|-----------------|
+| v1.1.0  | v3.4.1          |
 | v1.0.0  | v3.4.1          |
 
 See [CHANGELOG.md](CHANGELOG.md) for the changes in each release.
@@ -25,6 +26,7 @@ See [CHANGELOG.md](CHANGELOG.md) for the changes in each release.
 | `samples/drivers/spi_flash/` | External SPI-NOR flash test                          |
 | `samples/matter/light_bulb/` | Matter Light Bulb, adapted to the ISP2454 boards     |
 | `samples/matter/thermostat/` | Matter Thermostat, adapted to the ISP2454 boards     |
+| `samples/matter/lock/`       | Matter Door Lock, adapted to the ISP2454 boards      |
 
 ## Supported boards
 
@@ -60,6 +62,7 @@ Both flash chips are 32 Mbit (4 MiB) parts on `spi00`.
 | [SPI Flash](samples/drivers/spi_flash/README.md)         | Erases, writes and reads back one sector of the external flash |
 | [Matter Light Bulb](samples/matter/light_bulb/README.md) | Dimmable Matter light over Thread                              |
 | [Matter Thermostat](samples/matter/thermostat/README.md) | Matter thermostat over Thread with simulated temperature       |
+| [Matter Door Lock](samples/matter/lock/README.md)        | Matter door lock over Thread, with users and PIN credentials   |
 
 Each sample README lists the supported boards, the build configurations and
 the changes from the upstream nRF Connect SDK sample.
@@ -97,7 +100,7 @@ Replace the board target and the sample path as needed.
 ### VS Code
 
 `.vscode/settings.json` registers the repository as a board root and the
-three samples as applications for the nRF Connect for VS Code extension. Open
+samples as applications for the nRF Connect for VS Code extension. Open
 the `isp2454/` folder to use them.
 
 ## License
